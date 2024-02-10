@@ -1,4 +1,4 @@
-# setup
+# Setup
  
 1. Run "docker compose run --rm composer install".
 2. Copy ".env.example" file and replace name of new file to ".env".
@@ -8,4 +8,5 @@
 6. Run "docker compose up -d app".
 7. You are ready!, click F5 for starting with debug mode and move to "http://localhost:50".
 
-*** If you get error from docker about platform, check if the platform of mysql service (that configure in docker compose file) match to your platform. *** 
+# Notes
+If you get error from docker about platform, check if the platform of mysql service (that configure in docker compose file) match to your platform.
