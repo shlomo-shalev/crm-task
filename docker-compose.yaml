@@ -33,3 +33,14 @@ services:
     entrypoint: symfony
     tty: true
     stdin_open: true
+  console:
+    build:
+      context: .
+      dockerfile: ./docker/dockerfiles/app.dockerfile
+    image: crm_task_app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    entrypoint: php ./bin/console
+    tty: true
+    stdin_open: true
