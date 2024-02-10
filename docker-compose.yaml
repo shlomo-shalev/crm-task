@@ -1,0 +1,35 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/dockerfiles/app.dockerfile
+    image: crm_task_app
+    volumes:
+      - .:/var/www/html
+      - ./docker/entrypoint.sh:/etc/entrypoint.sh
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/php:/usr/local/etc/php/conf.d
+    ports:
+      - 50:80
+    working_dir: /var/www/html
+# Utility containers
+  composer:
+    image: composer
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    entrypoint: composer
+    tty: true
+    stdin_open: true
+  symfony:
+    build:
+      context: .
+      dockerfile: ./docker/dockerfiles/app.dockerfile
+    image: crm_task_app
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    entrypoint: symfony
+    tty: true
+    stdin_open: true
