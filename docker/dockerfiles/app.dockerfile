@@ -10,6 +10,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN apk add --no-cache bash curl git
 
+
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 
 ENV PATH="$HOME/.symfony5/bin:$PATH"
@@ -22,6 +23,8 @@ RUN git config --global user.name "app app"
 RUN apk add --update bzip2-dev
 
 RUN docker-php-ext-install bz2
+
+RUN docker-php-ext-install pdo pdo_mysql
 
 RUN apk add autoconf
 

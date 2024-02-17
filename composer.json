@@ -13,7 +13,12 @@
         "symfony/framework-bundle": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/yaml": "5.4.*",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "doctrine/doctrine-bundle": "^2.11",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^3.0",
+        "doctrine/dbal": "^3.8",
+        "symfony/doctrine-messenger": "6.4.*"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.50"
